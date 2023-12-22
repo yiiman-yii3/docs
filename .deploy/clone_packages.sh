@@ -9,7 +9,7 @@ if [ ! -d "$TARGET_DIR" ]; then
 fi
 
 # Read and decode JSON into an array
-REPOSITORIES=($(jq -r '.[]' repositories.json))
+REPOSITORIES=($(jq -r '.[]' $(pwd)/../related_docs.json))
 
 # Clone each repository in the array
 for repo in "${REPOSITORIES[@]}"; do
